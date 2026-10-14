@@ -1,0 +1,24 @@
+export interface Material {
+  id: string;
+  name: string;
+  category: 'filament' | 'resin' | 'ink' | 'energy' | 'packaging' | 'other';
+  unit: 'g' | 'kg' | 'ml' | 'l' | 'unit' | 'kwh';
+  totalCost: number;
+  totalQuantity: number;
+}
+
+export interface ProductQuote {
+  id: string;
+  title: string;
+  clientName?: string;
+  items: {
+    materialId: string;
+    quantityUsed: number;
+  }[];
+  machineHours: number;
+  machineHourlyRate: number;
+  fixedCostPercentage: number;
+  profitMarginPercentage: number;
+  finalPrice: number;
+  createdAt: string;
+}
